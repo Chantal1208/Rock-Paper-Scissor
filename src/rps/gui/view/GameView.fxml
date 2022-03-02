@@ -8,29 +8,29 @@
 
 <AnchorPane maxHeight="-Infinity" prefHeight="400.0" prefWidth="550.0" style="-fx-background-color: #F570AF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.GameViewController">
    <children>
-      <ImageView fitHeight="399.0" fitWidth="384.0" layoutX="327.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="bananaBackgroud2" fitHeight="399.0" fitWidth="384.0" layoutX="327.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../1228588-retro-vintage-80er-bananen-nahtloses-muster-vektor.jpeg" />
+            <Image url="@../controller/1228588-retro-vintage-80er-bananen-nahtloses-muster-vektor.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="265.0" fitWidth="265.0" layoutX="446.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="thisGuyimg" fitHeight="265.0" fitWidth="265.0" layoutX="446.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../mmm.png" />
+            <Image url="@../controller/mmm.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="395.0" fitWidth="384.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="bananaBackground1" fitHeight="395.0" fitWidth="384.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../1228588-retro-vintage-80er-bananen-nahtloses-muster-vektor.jpeg" />
+            <Image url="@../controller/1228588-retro-vintage-80er-bananen-nahtloses-muster-vektor.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="265.0" fitWidth="213.0" layoutX="279.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="theRockimg" fitHeight="265.0" fitWidth="213.0" layoutX="279.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Wwe_the_rock_png_by_double_a1698_day9ylt-pre_(1).png" />
+            <Image url="@../controller/Wwe_the_rock_png_by_double_a1698_day9ylt-pre_(1).png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="265.0" fitWidth="265.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="misterCrabsimg" fitHeight="265.0" fitWidth="265.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../crab1.png" />
+            <Image url="@../controller/crab1.png" />
          </image>
       </ImageView>
       <Label layoutX="298.0" layoutY="22.0" text="Score">
