@@ -6,14 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" prefHeight="400.0" prefWidth="550.0" style="-fx-background-color: #F570AF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.GameViewController">
+<AnchorPane maxHeight="-Infinity" prefHeight="465.0" prefWidth="706.0" style="-fx-background-color: #F570AF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.GameViewController">
    <children>
-      <ImageView fx:id="bananaBackgroud2" fitHeight="399.0" fitWidth="384.0" layoutX="327.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="bananaBackgroud2" fitHeight="384.0" fitWidth="410.0" layoutX="327.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@1228588-retro-vintage-80er-bananen-nahtloses-muster-vektor.jpeg" />
          </image>
       </ImageView>
-      <ImageView fx:id="thisGuyimg" fitHeight="265.0" fitWidth="268.0" layoutX="462.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="thisGuyimg" fitHeight="242.0" fitWidth="246.0" layoutX="463.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@mmm.png" />
          </image>
