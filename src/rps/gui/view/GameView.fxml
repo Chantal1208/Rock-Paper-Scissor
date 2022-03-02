@@ -13,7 +13,7 @@
             <Image url="@images/1228588-retro-vintage-80er-bananen-nahtloses-muster-vektor.jpeg" />
          </image>
       </ImageView>
-      <ImageView fx:id="thisGuyimg" fitHeight="242.0" fitWidth="246.0" layoutX="474.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="thisGuyimg" fitHeight="242.0" fitWidth="246.0" layoutX="552.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/mmm.png" />
          </image>
@@ -23,24 +23,24 @@
             <Image url="@images/1228588-retro-vintage-80er-bananen-nahtloses-muster-vektor.jpeg" />
          </image>
       </ImageView>
-      <ImageView fx:id="theRockimg" fitHeight="265.0" fitWidth="213.0" layoutX="259.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="theRockimg" fitHeight="265.0" fitWidth="213.0" layoutX="329.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/Wwe_the_rock_png_by_double_a1698_day9ylt-pre_(1).png" />
          </image>
       </ImageView>
-      <ImageView fx:id="misterCrabsimg" fitHeight="235.0" fitWidth="217.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="misterCrabsimg" fitHeight="235.0" fitWidth="217.0" layoutX="41.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/crab1.png" />
          </image>
       </ImageView>
-      <Label layoutX="312.0" layoutY="14.0" text="Score" textFill="#7ad6ff">
+      <Label layoutX="354.0" layoutY="19.0" text="Score" textFill="#7ad6ff">
          <font>
             <Font name="Franklin Gothic Medium" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="playerScoreLabel" layoutX="244.0" layoutY="18.0" prefHeight="42.0" prefWidth="42.0" style="-fx-border-color: #7AD6FF;" textAlignment="CENTER" textFill="#1d1b1b" />
-      <Label fx:id="aiScoreLabel" layoutX="425.0" layoutY="18.0" prefHeight="42.0" prefWidth="42.0" style="-fx-border-color: #7AD6FF;" textAlignment="CENTER" textFill="#7ad6ff" />
-      <Label fx:id="playersChoiceLabel" layoutX="134.0" layoutY="80.0" prefHeight="126.0" prefWidth="131.0" text="Label" />
-      <Label fx:id="aiChoiceLabel" layoutX="467.0" layoutY="26.0" prefHeight="40.0" prefWidth="85.0" style="-fx-background-color: #F570AF;" text="Label" />
+      <Label fx:id="playerScoreLabel" layoutX="287.0" layoutY="19.0" prefHeight="42.0" prefWidth="42.0" style="-fx-border-color: #7AD6FF;" textAlignment="CENTER" textFill="#1d1b1b" />
+      <Label fx:id="aiScoreLabel" layoutX="460.0" layoutY="20.0" prefHeight="42.0" prefWidth="42.0" style="-fx-border-color: #7AD6FF;" textAlignment="CENTER" textFill="#7ad6ff" />
+      <Label fx:id="playersChoiceLabel" layoutX="142.0" layoutY="-15.0" prefHeight="126.0" prefWidth="131.0" text="Label" />
+      <Label fx:id="aiChoiceLabel" layoutX="570.0" layoutY="20.0" prefHeight="40.0" prefWidth="85.0" style="-fx-background-color: #F570AF;" text="Label" />
    </children>
 </AnchorPane>
