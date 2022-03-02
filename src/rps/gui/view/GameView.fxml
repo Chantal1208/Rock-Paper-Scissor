@@ -13,7 +13,7 @@
             <Image url="@1228588-retro-vintage-80er-bananen-nahtloses-muster-vektor.jpeg" />
          </image>
       </ImageView>
-      <ImageView fx:id="thisGuyimg" fitHeight="265.0" fitWidth="265.0" layoutX="446.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="thisGuyimg" fitHeight="265.0" fitWidth="268.0" layoutX="462.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@mmm.png" />
          </image>
@@ -23,12 +23,12 @@
             <Image url="@1228588-retro-vintage-80er-bananen-nahtloses-muster-vektor.jpeg" />
          </image>
       </ImageView>
-      <ImageView fx:id="theRockimg" fitHeight="265.0" fitWidth="213.0" layoutX="279.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="theRockimg" fitHeight="265.0" fitWidth="213.0" layoutX="259.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Wwe_the_rock_png_by_double_a1698_day9ylt-pre_(1).png" />
          </image>
       </ImageView>
-      <ImageView fx:id="misterCrabsimg" fitHeight="265.0" fitWidth="265.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="misterCrabsimg" fitHeight="235.0" fitWidth="217.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@crab1.png" />
          </image>
