@@ -40,7 +40,7 @@
       </Label>
       <Label fx:id="playerScoreLabel" layoutX="244.0" layoutY="18.0" prefHeight="42.0" prefWidth="42.0" style="-fx-border-color: #000000;" textAlignment="CENTER" />
       <Label fx:id="aiScoreLabel" layoutX="425.0" layoutY="18.0" prefHeight="42.0" prefWidth="42.0" style="-fx-border-color: #000000;" textAlignment="CENTER" />
-      <Label fx:id="playersChoiceLabel" layoutX="134.0" layoutY="80.0" prefHeight="126.0" prefWidth="131.0" text="Label" />
-      <Label fx:id="aiChoiceLabel" layoutX="463.0" layoutY="79.0" prefHeight="126.0" prefWidth="131.0" style="-fx-background-color: #F570AF;" text="Label" />
+      <Label fx:id="playersChoiceLabel" layoutX="134.0" layoutY="80.0" prefHeight="126.0" prefWidth="131.0" />
+      <Label fx:id="aiChoiceLabel" layoutX="463.0" layoutY="79.0" prefHeight="126.0" prefWidth="131.0" style="-fx-background-color: #F570AF;" />
    </children>
 </AnchorPane>
