@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="354.0" prefWidth="269.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.GameViewController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="616.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/106-1065472_harold-thumbs-up-png-download-thumbs-up-meme.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="168.0" layoutY="22.0" text="Good">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+      <Label layoutX="183.0" layoutY="50.0" text="job!">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

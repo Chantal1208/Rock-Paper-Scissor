@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="334.0" prefWidth="298.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.GameViewController">
+   <children>
+      <ImageView fitHeight="334.0" fitWidth="619.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/gbgbg.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="14.0" layoutY="68.0" text="It's a">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="108.0" text="draw!">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
