@@ -7,7 +7,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BackgroundImage;
 import rps.bll.game.GameManager;
 import rps.bll.game.Move;
 import rps.bll.game.Result;
@@ -26,8 +25,6 @@ import java.util.ResourceBundle;
  */
 public class GameViewController implements Initializable {
     private PlayerType type;
-
-
     public ImageView misterCrabsimg, theRockimg, thisGuyimg, bananaBackground1, bananaBackground2;
     public ImageView playersChoiceImg, aiChoiceImg;
     public Button paperBtn, rockBtn, scissorsBtn;
@@ -73,29 +70,29 @@ public class GameViewController implements Initializable {
 
     private void startGame() {
         ge.playRound(playerMove);
-        Result result = null;
+        //Result result = null;
         int aiWins = 0;
         int humanWins = 0;
         for (Result result1 : ge.getGameState().getHistoricResults()) {
-            if(result.getWinnerPlayer().getPlayerType()==PlayerType.Human) {
-                if(result.getLoserMove()==Move.Rock) {
+            if(result1.getWinnerPlayer().getPlayerType()==PlayerType.Human) {
+                if(result1.getLoserMove()==Move.Rock) {
                     aiChoiceImg.setImage(new Image(rock));
                 }
-                if(result.getLoserMove()==Move.Paper) {
+                if(result1.getLoserMove()==Move.Paper) {
                     aiChoiceImg.setImage(new Image(paper));
                 }
-                if(result.getLoserMove()==Move.Scissor) {
+                if(result1.getLoserMove()==Move.Scissor) {
                     aiChoiceImg.setImage(new Image(scissor));
                 }
             }
-            if(result.getWinnerPlayer().getPlayerType()==PlayerType.AI) {
-                if(result.getWinnerMove()==Move.Rock) {
+            if(result1.getWinnerPlayer().getPlayerType()==PlayerType.AI) {
+                if(result1.getWinnerMove()==Move.Rock) {
                     aiChoiceImg.setImage(new Image(rock));
                 }
-                if(result.getWinnerMove()==Move.Paper) {
+                if(result1.getWinnerMove()==Move.Paper) {
                     aiChoiceImg.setImage(new Image(paper));
                 }
-                if(result.getWinnerMove()==Move.Scissor) {
+                if(result1.getWinnerMove()==Move.Scissor) {
                     aiChoiceImg.setImage(new Image(scissor));
                 }
             }
@@ -106,8 +103,6 @@ public class GameViewController implements Initializable {
             if (result1.getWinnerPlayer().getPlayerType() == PlayerType.AI && result1.getType() != ResultType.Tie)
                 aiWins++;
             aiScoreLabel.setText(""+aiWins+"");
-
-            result = result1;
         }
     }
 
