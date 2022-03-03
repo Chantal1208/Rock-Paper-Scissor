@@ -8,31 +8,95 @@ import rps.bll.game.Result;
 //Java imports
 import java.util.*;
 
-/**
- * Example implementation of a player.
- *
- * @author smsj
- */
 public class Player implements IPlayer {
 
     private String name;
     private PlayerType type;
+    private int minVal;
+
+    IGameState state = new IGameState() {
+        @Override
+        public int getRoundNumber() {
+            return 0;
+        }
+
+        @Override
+        public void setRoundNumber(int roundNumber) {
+
+        }
+
+        @Override
+        public Collection<Result> getHistoricResults() {
+            return null;
+        }
 
 
-    /**
-     * @param name
-     */
+    };
+
+
+
     public Player(String name, PlayerType type) {
         this.name = name;
         this.type = type;
     }
 
-    public int[] leastFrequent(IGameState state) {
 
-        int[] results1 = {1, 1, 2, 3, 4, 2, 2, 3, 3, 4, 4, 4};
+    @Override
+    public String getPlayerName() {
+        return name;
+    }
+
+
+    @Override
+    public PlayerType getPlayerType() {
+        return type;
+    }
+
+    @Override
+    public Move doMove(IGameState state) {
+        if (convertMoveList.size() <= 3) {
+            Random rand = new Random();
+            int rand_int1 = rand.nextInt(3);
+            if (rand_int1 == 0)
+                return Move.Rock;
+            else if (rand_int1 == 1)
+                return Move.Paper;
+            else
+                return Move.Scissor;
+        } else if (minVal == 1)
+            return Move.Rock;
+        else if (minVal == 2)
+            return Move.Paper;
+        else
+            return Move.Scissor;
+    }
+
+    /**
+     * Decides the next move for the bot...
+     *
+     * @param state Contains the current game state including historic moves/results
+     * @return Next move
+     */
+    ArrayList<Integer> convertMoveList = new ArrayList<>();
+
+    public ArrayList<Integer> convertMove(Move humanMove) {
+
+
+        if (humanMove == Move.Paper) {
+            convertMoveList.add(1);
+        } else if (humanMove == Move.Rock)
+            convertMoveList.add(2);
+        else
+            convertMoveList.add(3);
+        return convertMoveList;
+    }
+
+    public int leastFrequent(IGameState state) {
+
+
         Map<Integer, Integer> counts = new HashMap<>();
 
-        for (int i : results1) {
+        for (int i : convertMoveList) {
             if (counts.get(i) == null) {
                 counts.put(i, 1);
             } else {
@@ -57,64 +121,7 @@ public class Player implements IPlayer {
             System.out.println("Element: " + i + " Number of occurences: "
                     + minVal);
         }
-        return results1;
+        return minVal;
     }
 
-
-    @Override
-    public String getPlayerName() {
-        return name;
-    }
-
-
-    @Override
-    public PlayerType getPlayerType() {
-        return type;
-    }
-
-
-    /**
-     * Decides the next move for the bot...
-     * @param state Contains the current game state including historic moves/results
-     * @return Next move
-     */
-    @Override
-    public Move doMove(IGameState state) {
-        ArrayList<Result> results = (ArrayList<Result>) state.getHistoricResults();
-       if (results.size() <= 3)
-        {
-            Random rand = new Random();
-            int rand_int1 = rand.nextInt(3);
-            if (rand_int1 == 0)
-                return Move.Rock;
-            else if (rand_int1 == 1)
-                return Move.Paper;
-            else
-                return Move.Scissor;
-        }
-        else
-        if (results.size() == 0)
-            return Move.Rock;
-        else if (results.size() == 1)
-            return Move.Paper;
-        else
-            return Move.Scissor;
-
-        /*HashMap<Move,Move> mapCounter = new HashMap<>();
-
-        mapCounter.put(Move.Rock,Move.Paper);
-        mapCounter.put(Move.Paper,Move.Scissor);
-        mapCounter.put(Move.Scissor,Move.Rock);
-        List<Move> moveList = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            moveList.add(Move.Rock);
-            moveList.add(Move.Paper);
-            moveList.add(Move.Scissor);
-        }
-        Random random = new Random();
-        int randNumber = random.nextInt(moveList.size());
-        Move movePlay = mapCounter.get(moveList.get(randNumber));
-
-        return movePlay;*/
-    }
 }

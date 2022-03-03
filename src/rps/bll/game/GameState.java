@@ -12,6 +12,7 @@ public class GameState implements IGameState {
 
     private ArrayList<Result> historicResults;
     private int roundNumber;
+    private ArrayList<Integer> convertMoveList;
 
     /**
      *
@@ -37,4 +38,6 @@ public class GameState implements IGameState {
     public ArrayList<Result> getHistoricResults() {
         return historicResults;
     }
+
+    public ArrayList<Integer> convertMove (Move humanMove){return convertMoveList;}
 }

@@ -103,6 +103,8 @@ public class GameViewController implements Initializable {
             if (result1.getWinnerPlayer().getPlayerType() == PlayerType.AI && result1.getType() != ResultType.Tie)
                 aiWins++;
             aiScoreLabel.setText(""+aiWins+"");
+
+            //result = result1;
         }
     }
 
