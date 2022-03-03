@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BackgroundImage;
 import rps.bll.game.GameManager;
 import rps.bll.game.Move;
 import rps.bll.game.Result;
@@ -24,6 +25,7 @@ import java.util.ResourceBundle;
  * @author smsj
  */
 public class GameViewController implements Initializable {
+    private PlayerType type;
 
 
     public ImageView misterCrabsimg, theRockimg, thisGuyimg, bananaBackground1, bananaBackground2;
@@ -42,7 +44,9 @@ public class GameViewController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
     }
 
+
     public void gameMove(ActionEvent actionEvent) {
+        Result result = null;
         Button btnPressed = (Button) actionEvent.getSource();
         if (btnPressed == scissorsBtn) {
             playersChoiceImg.setImage(new Image(scissor));
@@ -53,6 +57,28 @@ public class GameViewController implements Initializable {
         }if (btnPressed == paperBtn) {
             playersChoiceImg.setImage(new Image(paper));
             playerMove= Move.Paper;
+        }
+        if(result.getWinnerPlayer().getPlayerType()==PlayerType.Human) {
+            if(result.getLoserMove()==Move.Rock) {
+                aiChoiceImg.setImage(new Image(rock));
+            }
+            if(result.getLoserMove()==Move.Paper) {
+                aiChoiceImg.setImage(new Image(paper));
+            }
+            if(result.getLoserMove()==Move.Scissor) {
+                aiChoiceImg.setImage(new Image(scissor));
+            }
+        }
+        if(result.getWinnerPlayer().getPlayerType()==PlayerType.AI) {
+            if(result.getWinnerMove()==Move.Rock) {
+                aiChoiceImg.setImage(new Image(rock));
+            }
+            if(result.getWinnerMove()==Move.Paper) {
+                aiChoiceImg.setImage(new Image(paper));
+            }
+            if(result.getWinnerMove()==Move.Scissor) {
+                aiChoiceImg.setImage(new Image(scissor));
+            }
         }
         startGame();
     }

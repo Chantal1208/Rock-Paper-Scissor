@@ -18,6 +18,7 @@ public class Player implements IPlayer {
     private String name;
     private PlayerType type;
 
+
     /**
      * @param name
      */
@@ -27,7 +28,7 @@ public class Player implements IPlayer {
     }
 
     public int[] leastFrequent(IGameState state) {
-        ArrayList<Result> results = (ArrayList<Result>) state.getHistoricResults();
+
         int[] results1 = {1, 1, 2, 3, 4, 2, 2, 3, 3, 4, 4, 4};
         Map<Integer, Integer> counts = new HashMap<>();
 
@@ -78,8 +79,9 @@ public class Player implements IPlayer {
      * @return Next move
      */
     @Override
-    public Move doMove(IGameState state) {/*
-       (results.size() <= 3)
+    public Move doMove(IGameState state) {
+        ArrayList<Result> results = (ArrayList<Result>) state.getHistoricResults();
+       if (results.size() <= 3)
         {
             Random rand = new Random();
             int rand_int1 = rand.nextInt(3);
@@ -91,11 +93,11 @@ public class Player implements IPlayer {
                 return Move.Scissor;
         }
         else
-        if (results1 == 0)
+        if (results.size() == 0)
             return Move.Rock;
-        else if (results1 == 1)
+        else if (results.size() == 1)
             return Move.Paper;
-        else*/
+        else
             return Move.Scissor;
     }
 }

@@ -22,7 +22,7 @@ public class Main {
         //startRPSConsoleGame();
 
         //JavaFX version
-        startRPSJavaFXGame();
+       startRPSJavaFXGame();
     }
 
     /**
