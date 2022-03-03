@@ -34,17 +34,23 @@
             <Image url="@images/crab1.png" />
          </image>
       </ImageView>
-      <Label layoutX="354.0" layoutY="19.0" text="Score" textFill="#7ad6ff">
+      <Label layoutX="354.0" layoutY="19.0" text="Score" textFill="#eef4ee">
          <font>
             <Font name="Franklin Gothic Medium" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="playerScoreLabel" layoutX="287.0" layoutY="19.0" prefHeight="42.0" prefWidth="42.0" style="-fx-border-color: #7AD6FF;" textAlignment="CENTER" textFill="#1d1b1b" />
-      <Label fx:id="aiScoreLabel" layoutX="460.0" layoutY="20.0" prefHeight="42.0" prefWidth="42.0" style="-fx-border-color: #7AD6FF;" textAlignment="CENTER" textFill="#7ad6ff" />
+      <Label fx:id="playerScoreLabel" layoutX="287.0" layoutY="19.0" prefHeight="42.0" prefWidth="42.0" text="  0" textAlignment="CENTER" textFill="#f7fafb">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font></Label>
       <Button fx:id="scissorsBtn" layoutX="39.0" layoutY="244.0" mnemonicParsing="false" onAction="#gameMove" opacity="0.0" prefHeight="217.0" prefWidth="217.0" />
       <Button fx:id="rockBtn" layoutX="323.0" layoutY="200.0" mnemonicParsing="false" onAction="#gameMove" opacity="0.0" prefHeight="265.0" prefWidth="202.0" />
       <Button fx:id="paperBtn" layoutX="606.0" layoutY="247.0" mnemonicParsing="false" onAction="#gameMove" opacity="0.0" prefHeight="217.0" prefWidth="137.0" />
       <ImageView fx:id="playersChoiceImg" fitHeight="150.0" fitWidth="200.0" layoutX="48.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="aiChoiceImg" fitHeight="150.0" fitWidth="200.0" layoutX="523.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="aiScoreLabel" layoutX="460.0" layoutY="20.0" prefHeight="42.0" prefWidth="42.0" text="  0" textAlignment="CENTER" textFill="#f7fbfd">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font></Label>
    </children>
 </AnchorPane>

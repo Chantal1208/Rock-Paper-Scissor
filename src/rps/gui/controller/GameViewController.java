@@ -2,11 +2,15 @@ package rps.gui.controller;
 
 // Java imports
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 import rps.bll.game.GameManager;
 import rps.bll.game.Move;
 import rps.bll.game.Result;
@@ -15,6 +19,7 @@ import rps.bll.player.IPlayer;
 import rps.bll.player.Player;
 import rps.bll.player.PlayerType;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -24,6 +29,7 @@ import java.util.ResourceBundle;
  * @author smsj
  */
 public class GameViewController implements Initializable {
+    public Label whoWinsLabel;
     private PlayerType type;
     public ImageView misterCrabsimg, theRockimg, thisGuyimg, bananaBackground1, bananaBackground2;
     public ImageView playersChoiceImg, aiChoiceImg;
@@ -67,12 +73,15 @@ public class GameViewController implements Initializable {
         }
         startGame();
     }
-
+    int globalaiWins = 0;
+    int globalhumanWins = 0;
     private void startGame() {
         ge.playRound(playerMove);
         //Result result = null;
-        int aiWins = 0;
-        int humanWins = 0;
+
+
+        //int aiWins = 0;
+        //int humanWins = 0;
         for (Result result1 : ge.getGameState().getHistoricResults()) {
             if(result1.getWinnerPlayer().getPlayerType()==PlayerType.Human) {
                 if(result1.getLoserMove()==Move.Rock) {
@@ -96,18 +105,63 @@ public class GameViewController implements Initializable {
                     aiChoiceImg.setImage(new Image(scissor));
                 }
             }
-            if (result1.getWinnerPlayer().getPlayerType() == PlayerType.Human && result1.getType() != ResultType.Tie)
+            /*if (result1.getWinnerPlayer().getPlayerType() == PlayerType.Human && result1.getType() != ResultType.Tie){
                 humanWins++;
-            playerScoreLabel.setText(""+humanWins+"");
+                whoWinsLabel.setText("Human won !");
+            }
+            //playerScoreLabel.setText(""+humanWins+"");
 
-            if (result1.getWinnerPlayer().getPlayerType() == PlayerType.AI && result1.getType() != ResultType.Tie)
+            if (result1.getWinnerPlayer().getPlayerType() == PlayerType.AI && result1.getType() != ResultType.Tie){
                 aiWins++;
-            aiScoreLabel.setText(""+aiWins+"");
-
+                whoWinsLabel.setText("AI won !");
+            }
+            //aiScoreLabel.setText(""+aiWins+"");
             //result = result1;
+            */
         }
+
+        Result result1 = (Result) ge.getGameState().getHistoricResults().toArray()[ge.getGameState().getHistoricResults().size()-1];
+        if (result1.getWinnerPlayer().getPlayerType() == PlayerType.Human && result1.getType() != ResultType.Tie){
+            popupShow("Won");
+            globalhumanWins++;
+        }
+        if (result1.getWinnerPlayer().getPlayerType() == PlayerType.AI && result1.getType() != ResultType.Tie){
+            popupShow("Lost");
+            globalaiWins++;
+        }
+        if ( result1.getType() == ResultType.Tie){
+            popupShow("Tie");
+        }
+        playerScoreLabel.setText(""+globalhumanWins+"");
+
+        aiScoreLabel.setText(""+globalaiWins+"");
     }
 
+    private void popupShow(String condition){
+        FXMLLoader fxmlLoader;
+        switch(condition) {
+            case "Won" :
+                 fxmlLoader = new FXMLLoader(getClass().getResource("../view/WinnerWindow.fxml"));
+                break; // optional
+
+            case "Lost" :
+                 fxmlLoader = new FXMLLoader(getClass().getResource("../view/LoserWindow.fxml"));
+                break; // optional
+
+            // Tie
+            default : // Optional
+                 fxmlLoader = new FXMLLoader(getClass().getResource("../view/TieWindow.fxml"));
+        }
+        try {
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.centerOnScreen();
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     private String getRandomBotName() {
         String[] botNames = new String[] {
                 "R2D2",
