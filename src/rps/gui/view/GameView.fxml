@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -8,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" prefHeight="465.0" prefWidth="706.0" style="-fx-background-color: #F570AF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.GameViewController">
    <children>
-      <ImageView fx:id="bananaBackgroud2" fitHeight="459.0" fitWidth="415.0" layoutX="415.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="bananaBackground2" fitHeight="459.0" fitWidth="415.0" layoutX="415.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/1228588-retro-vintage-80er-bananen-nahtloses-muster-vektor.jpeg" />
          </image>
@@ -25,7 +26,7 @@
       </ImageView>
       <ImageView fx:id="theRockimg" fitHeight="265.0" fitWidth="213.0" layoutX="329.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/Wwe_the_rock_png_by_double_a1698_day9ylt-pre_(1).png" />
+            <Image url="@images/therock.png" />
          </image>
       </ImageView>
       <ImageView fx:id="misterCrabsimg" fitHeight="235.0" fitWidth="217.0" layoutX="41.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
@@ -40,7 +41,10 @@
       </Label>
       <Label fx:id="playerScoreLabel" layoutX="287.0" layoutY="19.0" prefHeight="42.0" prefWidth="42.0" style="-fx-border-color: #7AD6FF;" textAlignment="CENTER" textFill="#1d1b1b" />
       <Label fx:id="aiScoreLabel" layoutX="460.0" layoutY="20.0" prefHeight="42.0" prefWidth="42.0" style="-fx-border-color: #7AD6FF;" textAlignment="CENTER" textFill="#7ad6ff" />
-      <Label fx:id="playersChoiceLabel" layoutX="142.0" layoutY="-15.0" prefHeight="126.0" prefWidth="131.0" text="Label" />
-      <Label fx:id="aiChoiceLabel" layoutX="570.0" layoutY="20.0" prefHeight="40.0" prefWidth="85.0" style="-fx-background-color: #F570AF;" text="Label" />
+      <Button fx:id="scissorsBtn" layoutX="39.0" layoutY="244.0" mnemonicParsing="false" onAction="#gameMove" opacity="0.0" prefHeight="217.0" prefWidth="217.0" />
+      <Button fx:id="rockBtn" layoutX="323.0" layoutY="200.0" mnemonicParsing="false" onAction="#gameMove" opacity="0.0" prefHeight="265.0" prefWidth="202.0" />
+      <Button fx:id="paperBtn" layoutX="606.0" layoutY="247.0" mnemonicParsing="false" onAction="#gameMove" opacity="0.0" prefHeight="217.0" prefWidth="137.0" />
+      <ImageView fx:id="playersChoiceImg" fitHeight="150.0" fitWidth="200.0" layoutX="48.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="aiChoiceImg" fitHeight="150.0" fitWidth="200.0" layoutX="523.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
