@@ -6,7 +6,7 @@ import rps.bll.game.Move;
 import rps.bll.game.Result;
 
 //Java imports
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * Example implementation of a player.
@@ -24,6 +24,39 @@ public class Player implements IPlayer {
     public Player(String name, PlayerType type) {
         this.name = name;
         this.type = type;
+    }
+
+    public int[] leastFrequent(IGameState state) {
+        ArrayList<Result> results = (ArrayList<Result>) state.getHistoricResults();
+        int[] results1 = {1, 1, 2, 3, 4, 2, 2, 3, 3, 4, 4, 4};
+        Map<Integer, Integer> counts = new HashMap<>();
+
+        for (int i : results1) {
+            if (counts.get(i) == null) {
+                counts.put(i, 1);
+            } else {
+                counts.put(i, counts.get(i) + 1);
+            }
+        }
+
+        //find min value by sorting values and taking top element
+        List<Integer> cs = new ArrayList<Integer>(counts.values());
+        Collections.sort(cs);
+        int minVal = cs.get(0);
+
+        //find elements with minVal as their count
+        List<Integer> minElements = new ArrayList<>();
+        for (Map.Entry<Integer, Integer> entry : counts.entrySet()) {
+            if (entry.getValue() == minVal) {
+                minElements.add(entry.getKey());
+            }
+        }
+        //spit out each element and the count
+        for (Integer i : minElements) {
+            System.out.println("Element: " + i + " Number of occurences: "
+                    + minVal);
+        }
+        return results1;
     }
 
 
@@ -45,11 +78,24 @@ public class Player implements IPlayer {
      * @return Next move
      */
     @Override
-    public Move doMove(IGameState state) {
-        //Historic data to analyze and decide next move...
-        ArrayList<Result> results = (ArrayList<Result>) state.getHistoricResults();
-
-        //Implement better AI here...
-        return Move.Rock;
+    public Move doMove(IGameState state) {/*
+       (results.size() <= 3)
+        {
+            Random rand = new Random();
+            int rand_int1 = rand.nextInt(3);
+            if (rand_int1 == 0)
+                return Move.Rock;
+            else if (rand_int1 == 1)
+                return Move.Paper;
+            else
+                return Move.Scissor;
+        }
+        else
+        if (results1 == 0)
+            return Move.Rock;
+        else if (results1 == 1)
+            return Move.Paper;
+        else*/
+            return Move.Scissor;
     }
 }
