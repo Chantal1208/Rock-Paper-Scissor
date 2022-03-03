@@ -36,6 +36,17 @@ public class GameViewController implements Initializable {
     private String rock = "/rps/gui/view/images/therock.png";
     private String paper = "/rps/gui/view/images/mmm.png";
     private String scissor = "/rps/gui/view/images/crab1.png";
+    private IPlayer human;
+    private IPlayer bot;
+    private GameManager ge;
+
+
+    public GameViewController() {
+        human = new Player("Player", PlayerType.Human);
+        bot = new Player(getRandomBotName(), PlayerType.AI);
+        ge = new GameManager(human, bot);
+    }
+
 
     /**
      * Initializes the controller class.
@@ -46,7 +57,6 @@ public class GameViewController implements Initializable {
 
 
     public void gameMove(ActionEvent actionEvent) {
-        Result result = null;
         Button btnPressed = (Button) actionEvent.getSource();
         if (btnPressed == scissorsBtn) {
             playersChoiceImg.setImage(new Image(scissor));
@@ -58,40 +68,37 @@ public class GameViewController implements Initializable {
             playersChoiceImg.setImage(new Image(paper));
             playerMove= Move.Paper;
         }
-        if(result.getWinnerPlayer().getPlayerType()==PlayerType.Human) {
-            if(result.getLoserMove()==Move.Rock) {
-                aiChoiceImg.setImage(new Image(rock));
-            }
-            if(result.getLoserMove()==Move.Paper) {
-                aiChoiceImg.setImage(new Image(paper));
-            }
-            if(result.getLoserMove()==Move.Scissor) {
-                aiChoiceImg.setImage(new Image(scissor));
-            }
-        }
-        if(result.getWinnerPlayer().getPlayerType()==PlayerType.AI) {
-            if(result.getWinnerMove()==Move.Rock) {
-                aiChoiceImg.setImage(new Image(rock));
-            }
-            if(result.getWinnerMove()==Move.Paper) {
-                aiChoiceImg.setImage(new Image(paper));
-            }
-            if(result.getWinnerMove()==Move.Scissor) {
-                aiChoiceImg.setImage(new Image(scissor));
-            }
-        }
         startGame();
     }
 
     private void startGame() {
-        IPlayer human = new Player("Player", PlayerType.Human);
-        IPlayer bot = new Player(getRandomBotName(), PlayerType.AI);
-        GameManager ge = new GameManager(human, bot);
         ge.playRound(playerMove);
         Result result = null;
         int aiWins = 0;
         int humanWins = 0;
         for (Result result1 : ge.getGameState().getHistoricResults()) {
+            if(result.getWinnerPlayer().getPlayerType()==PlayerType.Human) {
+                if(result.getLoserMove()==Move.Rock) {
+                    aiChoiceImg.setImage(new Image(rock));
+                }
+                if(result.getLoserMove()==Move.Paper) {
+                    aiChoiceImg.setImage(new Image(paper));
+                }
+                if(result.getLoserMove()==Move.Scissor) {
+                    aiChoiceImg.setImage(new Image(scissor));
+                }
+            }
+            if(result.getWinnerPlayer().getPlayerType()==PlayerType.AI) {
+                if(result.getWinnerMove()==Move.Rock) {
+                    aiChoiceImg.setImage(new Image(rock));
+                }
+                if(result.getWinnerMove()==Move.Paper) {
+                    aiChoiceImg.setImage(new Image(paper));
+                }
+                if(result.getWinnerMove()==Move.Scissor) {
+                    aiChoiceImg.setImage(new Image(scissor));
+                }
+            }
             if (result1.getWinnerPlayer().getPlayerType() == PlayerType.Human && result1.getType() != ResultType.Tie)
                 humanWins++;
             playerScoreLabel.setText(""+humanWins+"");

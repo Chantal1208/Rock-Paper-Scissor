@@ -99,5 +99,22 @@ public class Player implements IPlayer {
             return Move.Paper;
         else
             return Move.Scissor;
+
+        /*HashMap<Move,Move> mapCounter = new HashMap<>();
+
+        mapCounter.put(Move.Rock,Move.Paper);
+        mapCounter.put(Move.Paper,Move.Scissor);
+        mapCounter.put(Move.Scissor,Move.Rock);
+        List<Move> moveList = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            moveList.add(Move.Rock);
+            moveList.add(Move.Paper);
+            moveList.add(Move.Scissor);
+        }
+        Random random = new Random();
+        int randNumber = random.nextInt(moveList.size());
+        Move movePlay = mapCounter.get(moveList.get(randNumber));
+
+        return movePlay;*/
     }
 }
